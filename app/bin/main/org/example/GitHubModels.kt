@@ -39,3 +39,7 @@ data class GitHubRepo(
     val openIssuesCount: Int,
     val private: Boolean
 )
+
+data class GitHubUser(
+    val login: String
+)

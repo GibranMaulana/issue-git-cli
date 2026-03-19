@@ -12,7 +12,6 @@ import java.net.http.HttpResponse
 object GitHubClient {
     private val dotenv =
         dotenv {
-            directory = ".."
             ignoreIfMissing = true
         }
 	
@@ -59,6 +58,11 @@ object GitHubClient {
 
         val repoType = object : TypeToken<List<GitHubRepo>>() {}.type
         return gson.fromJson(json, repoType)
+    }
+
+    fun fetchAuthenticatedUser(): GitHubUser? {
+        val json = apiGet("https://api.github.com/user") ?: return null
+        return gson.fromJson(json, GitHubUser::class.java)
     }
 
     fun fetchActiveIssues(
