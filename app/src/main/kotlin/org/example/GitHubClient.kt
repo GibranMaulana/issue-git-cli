@@ -16,7 +16,8 @@ object GitHubClient {
     private val executionDir = File(jarFile.parentFile.parentFile, "bin").absolutePath
     private val dotenv =
         dotenv {
-				directory = executionDir
+				//uncomment for Compiling the executables
+				// directory = executionDir
             ignoreIfMissing = true
         }
 	
