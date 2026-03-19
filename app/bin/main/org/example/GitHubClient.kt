@@ -5,13 +5,18 @@ import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
 import io.github.cdimascio.dotenv.dotenv
 import java.net.URI
+import java.io.File
 import java.net.http.HttpClient
 import java.net.http.HttpRequest
 import java.net.http.HttpResponse
 
 object GitHubClient {
+	 private val jarFile = File(GitHubClient::class.java.protectionDomain.codeSource.location.toURI())
+    
+    private val executionDir = File(jarFile.parentFile.parentFile, "bin").absolutePath
     private val dotenv =
         dotenv {
+				directory = executionDir
             ignoreIfMissing = true
         }
 	

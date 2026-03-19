@@ -27,7 +27,7 @@ fun main() {
 
     val header = (bold + cyan)("""
   ╔═════════════════════════════════════════════════════════╗
-  ║                 kt-issue  |  Stand-Up                   ║
+  ║               issue-git-cli  |  Stand-Up                ║
   ║       Team Issue Tracker CLI v2.0 made by Gibran        ║
   ╚═════════════════════════════════════════════════════════╝
 """.trimIndent())
